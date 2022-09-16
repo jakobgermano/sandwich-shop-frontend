@@ -1,11 +1,13 @@
 import './App.css';
-import Menu from './features/Menu'
+import Sandwiches from './features/Sandwiches'
+import {useState} from 'react'
 
 function App() {
+  const[sandwiches, setSandwiches] = useState([])
 
   return (
     <div className="App">
-      <Menu/>
+      <Sandwiches sandwiches={sandwiches} setSandwiches={setSandwiches} />
     </div>
   );
 }
