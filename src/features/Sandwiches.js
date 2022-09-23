@@ -1,6 +1,6 @@
-import{useEffect} from 'react';
+import {useEffect} from 'react';
 import React from 'react';
-import SandwichCard from './features/SandwichCard'
+import SandwichCard from './SandwichCard';
 
 function Sandwiches({sandwiches, setSandwiches}) {
 
@@ -10,13 +10,14 @@ function Sandwiches({sandwiches, setSandwiches}) {
         .then((s) => {
             setSandwiches(s.sandwiches)
         })
-    }, [])
+    },[])
 
-    const allSandwiches = sandwiches&&sandwiches.map((s) => <SandwichCard sandwiches={sandwiches} sandwich={s} setSandwiches={setSandwiches} key={s.id}/>)
+    const allSandwiches = sandwiches&&sandwiches.map((s) => <SandwichCard sandwiches={sandwiches} sandwich={s} key={s.id}/>)
 
 
     return(
         <div>
+            <h1>sandwiches</h1>
             {allSandwiches}
         </div>
     )
